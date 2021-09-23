@@ -7,7 +7,7 @@
 import cv2
 import mediapipe as mp
 
-# from HandCoords import Hands
+from HandCoords import Hands
 
 
 class HandDetector():
@@ -40,7 +40,7 @@ class HandDetector():
                         self.mp_drawing_styles.get_default_hand_landmarks_style(),
                         self.mp_drawing_styles.get_default_hand_connections_style())
 
-        # hands = Hands(results)
+        hands = Hands(results)
 
         return image, hands
 
