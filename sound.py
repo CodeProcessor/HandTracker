@@ -17,10 +17,12 @@ class Sound:
         threading.Thread(target=playsound, args=(sound,), daemon=True).start()
 
     def click(self):
-        self._play('data/sound/click.mp3')
+        threading.Thread(target=playsound, args=('data/sound/click.mp3',), daemon=True).start()
+        # self._play('data/sound/click.mp3')
 
     def double_click(self):
-        self._play('data/sound/double_click.wav')
+        threading.Thread(target=playsound, args=('data/sound/click2.mp3',), daemon=True).start()
+        # self._play('data/sound/double_click.wav')
 
 
 if __name__ == '__main__':
