@@ -13,13 +13,14 @@ class Sound:
     def __init__(self):
         ...
 
+    def _play(self, sound):
+        threading.Thread(target=playsound, args=(sound,), daemon=True).start()
+
     def click(self):
-        # playsound('data/sound/switch-8.mp3')
-        threading.Thread(target=playsound, args=('data/sound/switch-8.mp3',), daemon=True).start()
+        self._play('data/sound/click.mp3')
 
     def double_click(self):
-        # playsound('data/sound/switch-8.mp3')
-        threading.Thread(target=playsound, args=('data/sound/Flash-clicks-01.wav',), daemon=True).start()
+        self._play('data/sound/double_click.wav')
 
 
 if __name__ == '__main__':
