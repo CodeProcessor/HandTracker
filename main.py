@@ -10,12 +10,12 @@ from hand_detect import HandDetector
 import cv2
 
 from hands_info import HandsInfo
-# from sound import Sound
+from sound import Sound
 
 
 def main():
     detector = HandDetector()
-    # sound = Sound()
+    sound = Sound()
     hand_movements = HandsInfo()
     cap = cv2.VideoCapture(0)
     while cap.isOpened():
@@ -31,9 +31,9 @@ def main():
           break
 
         hand_movements.detect(hands_info)
-        # if hand_movements.clicked:
-        #     sound.click()
-        print(hand_movements.clicked)
+        if hand_movements.clicked_state:
+            sound.click()
+        print(hand_movements.clicked_state)
         time.sleep(0.02
         )
 
